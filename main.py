@@ -3,7 +3,7 @@ import time
 import discord
 from discord.ext import commands
 from discord.commands import Option
-from candle_chart import make_daily_candle_chart, timespan_candle_chart
+from candle_chart import make_daily_candle_chart, timespan_candle_chart, make_candle_chart
 from stock_data import get_ticker_data
 from gap_data import get_gap_data
 from datetime import datetime, date as d
@@ -121,8 +121,6 @@ async def daily_candle_stick_chart(ctx, ticker: Option(str, description="Stock S
     tickers = ticker.split()
     for t in tickers:
         make_daily_candle_chart(t, date)
-        await ctx.respond(file=discord.File('daily_chart.jpeg'))
-'''
 
 
 @bot.slash_command(name="chart", description='Candle Stick Chart with Time Intervals')
