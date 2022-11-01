@@ -11,6 +11,8 @@ import pandas as pd
 from pytz import timezone
 from finviz.screener import Screener, NoResults
 
+TOKEN = os.getenv("TOKEN")
+
 tz = timezone('EST')
 
 guild_ids = [985331377698385950, 981996746475462656, 959419758560804894, 905562370326274068, 959872581270388766]
@@ -208,4 +210,4 @@ async def gap_stats(ctx, ticker: Option(str, description="Stock Symbol", require
 ----------------------------------------
         """)
 
-bot.run('MTAzNjgwNzUxNzk3MzUyODU4Ng.GC3eRl.79XInzVzhWC9axvBUrxVRpet8i5PY5rMPExbdw')
+bot.run(TOKEN)
