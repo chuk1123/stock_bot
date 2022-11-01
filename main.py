@@ -9,7 +9,7 @@ from gap_data import get_gap_data
 from datetime import datetime, date as d
 import pandas as pd
 from pytz import timezone
-from finviz.screener import Screener, NoResults
+#from finviz.screener import Screener, NoResults
 
 TOKEN = os.getenv("TOKEN")
 
@@ -69,6 +69,7 @@ async def stock_data(ctx, ticker: Option(str, description="Stock Symbols (separa
 
     await ctx.respond(file=discord.File('stock_data.xlsx'))
 
+'''
 @bot.slash_command(name = "funda", description = "Get the tickers data")
 async def funda(ctx, ticker: Option(str, description="Ticker" , required=True)):
     await ctx.response.defer()
@@ -100,6 +101,7 @@ async def funda(ctx, ticker: Option(str, description="Ticker" , required=True)):
 
     await ctx.followup.send(embeds=embeds)
 '''
+
 @bot.slash_command(guild_ids=guild_ids, description='Get Candle Stick Chart with Timeframe')
 async def timerange_candle_stick_chart(ctx, ticker: Option(str, description="Stock Symbols (seperate with space)", required=True), time1: Option(str, description='(HH:MM)', required=True),
                              time2: Option(str, description='(HH:MM)', required=True), date: Option(str, description='(YYYY-MM-DD)', required=False)):
