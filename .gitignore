@@ -1,7 +1,7 @@
-# .gitignore
+.gitignore
 __pycache__
 venv
 env
 .pytest_cache
 .coverage
-DS_Store
+.DS_Store
